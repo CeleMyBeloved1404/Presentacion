@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Texto IA - Portafolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #8b949e;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+
+    .generator-container {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 0 15px rgba(88,166,255,0.1);
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      color: #e6edf3;
+      padding: 12px;
+      font-size: 1em;
+      resize: none;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #58a6ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #1f6feb;
+      transform: scale(1.05);
+    }
+
+    .output {
+      margin-top: 25px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 15px;
+      min-height: 120px;
+      color: #c9d1d9;
+      text-align: left;
+      white-space: pre-line;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9em;
+      color: #8b949e;
+      border-top: 1px solid #30363d;
+      margin-top: 60px;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    a.back-link:hover {
+      color: #1f6feb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧠 Generador de Texto con IA</h1>
+    <p class="subtitle">Escribí una idea o concepto y dejá que la IA genere una descripción profesional.</p>
+  </header>
+
+  <section class="generator-container">
+    <textarea id="idea" placeholder="Ej: Una app para mejorar la productividad..."></textarea>
+    <button onclick="generarTexto()">Generar texto</button>
+    <div class="output" id="resultado"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tadeo — Proyecto creado con IA</p>
+    <a href="index.html" class="back-link">← Volver al portafolio</a>
+  </footer>
+
+  <script>
+    async function generarTexto() {
+      const idea = document.getElementById("idea").value;
+      const resultado = document.getElementById("resultado");
+      if (!idea.trim()) {
+        resultado.innerHTML = "⚠️ Escribí una idea primero.";
+        return;
+      }
+
+      resultado.innerHTML = "🤖 Generando texto con IA...";
+
+      // Simulación local (sin API aún)
+      await new Promise(r => setTimeout(r, 1500));
+
+      const respuestas = [
+        `“${idea}” tiene un gran potencial para convertirse en un proyecto innovador. Su aplicación práctica puede generar impacto real y atraer usuarios interesados en soluciones modernas.`,
+        `Tu idea sobre “${idea}” combina tecnología y creatividad. Si se ejecuta correctamente, puede destacar en un mercado competitivo.`,
+        `El concepto “${idea}” se alinea perfectamente con las tendencias actuales en desarrollo digital e inteligencia artificial.`
+      ];
+
+      const textoIA = respuestas[Math.floor(Math.random() * respuestas.length)];
+      resultado.innerHTML = textoIA;
+    }
+  </script>
+</body>
+</html>
