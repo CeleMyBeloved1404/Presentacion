@@ -97,7 +97,7 @@
         resultado.innerHTML = "⚠️ Escribí una idea primero.";
         return;
       }
-      if (TU_API_KEY === "REEMPLAZA_ESTO_CON_TU_API_KEY") {
+      if (TU_API_KEY === null) {
         resultado.innerHTML = "⚠️ Error: Falta la API Key en el archivo .html. Revisa el código.";
         return;
       }
